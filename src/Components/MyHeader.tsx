@@ -7,20 +7,20 @@ import { EdgeInsets } from 'react-native-safe-area-context';
 import { useActions, useAppState } from '../Others/Overmind/OvermindHelper';
 import { useRoute } from '@react-navigation/native';
 
-interface Props {
-    navigation: StackNavigationProp<ParamListBase>,
-    mode: "float" | "screen";
-    layout: Layout;
-    insets: EdgeInsets;
-    scene: Scene<Route<string, object>>;
-    previous?: Scene<Route<string, object>>;
-}
+// interface Props {
+//     navigation: StackNavigationProp<ParamListBase>,
+//     mode: "float" | "screen";
+//     layout: Layout;
+//     insets: EdgeInsets;
+//     scene: Scene<Route<string, object>>;
+//     previous?: Scene<Route<string, object>>;
+// }
 
-const MyHeader: React.FC<Props> = (props) => {
+const MyHeader = (props: any) => {
     const { } = useActions()
     const { } = useAppState()
     const route = useRoute();
-    const { navigation, previous, } = props
+    const { navigation, previous } = props
 
     return <Appbar.Header >
         {previous ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
